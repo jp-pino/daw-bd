@@ -42,3 +42,14 @@ h1 {
 .shadow {
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+body, #sidenav, .social {
+	opacity: 0; !important
+}
+
+#logo_big {
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	z-index: 5;
+}
