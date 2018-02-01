@@ -21,7 +21,7 @@ basicTimeline
 		delay: function(el, i) { return i * 250 }
 	})
 	.add({
-		targets: '#logo_big',
+		targets: '.logo_big',
 		opacity: 1,// Animate all divs opacity to .8
 		duration: 1200,
 		elasticity: 10
