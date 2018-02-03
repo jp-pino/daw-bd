@@ -1,3 +1,7 @@
+$(document).ready(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+}); 
+
 //Prueba 1
 function table_power() {
 	var n = parseInt(window.prompt("Ingresa un número", "1"));

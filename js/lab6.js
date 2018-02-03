@@ -11,10 +11,6 @@ function unfocus_style() {
 card_text.onmouseover = focus_style;
 card_text.onmouseout = unfocus_style;
 
-$(document).ready(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-}); 
-
 function welcome() {
 	$("#welcome").modal('show');
 }
