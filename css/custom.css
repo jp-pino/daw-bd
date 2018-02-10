@@ -93,7 +93,7 @@ body, #sidenav, .social {
 .asog {
 	color: #fff;
 	text-align: center;
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/intro-bg3.jpeg);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/intro-bg3.jpeg);
 	background-size: cover;
 	background-color: #000;
 	font-family: PT Sans, sans-serif;
@@ -125,7 +125,7 @@ body, #sidenav, .social {
 
 .asog-r2:before,
 .asog-r2:after {
-	background: url(/images/decorations.svg) no-repeat center center/2.5em 0.7em;
+	background: url(../images/decorations.svg) no-repeat center center/2.5em 0.7em;
 	content: "";
 	left: -3em;
 	position: absolute;
