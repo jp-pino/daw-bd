@@ -1,0 +1,78 @@
+            <article id="questions" class="py-4">
+                <header>
+                    <h2>Preguntas</h2>
+                    <h5 class="px-3">...y respuestas</h5>
+                </header>
+
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">¿Por qué es una buena práctica separar el controlador de la vista?</h4>
+                        <p class="card-text">Porque disminuye la complekidad de código y permite reusabilidad del mismo.</p>
+                    </div>
+                </div>
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</h4>
+                        <p class="card-text"><code>$_FILES</code>: array de archivos subidos con el método <code>POST</code></p>
+                        <p class="card-text"><code>$_REQUEST</code>: almacena información sobre la forma recibida</p>
+                    </div>
+                </div>
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</h4>
+                        <p class="card-text"><code>htmlspecialchars()</code>: convierte los caracteres especiales de html a texto plano para que no altere el funcionamiento de la página.</p>
+                        <p class="card-text"><code>stripslashes()</code>: remueve los backslashes ('\') del texto al que se aplique la función.</p>
+                    </div>
+                </div>
+                <div class="card mt-4 shadow">
+                    <div class="card-body">
+                        <h4 class="card-title">¿Qué es XSS y cómo se puede prevenir?</h4>
+                        <p class="card-text">Es un tipo de vulnerabilidad de seguridad encontrada en aplicaciones web. Esta busca insertar scripts a la pagina desde el lado del cliente a páginas vistas por otros usuarios. Esto se previene validando los valores de entrada con funciones como <code>htmlspecialchars()</code> y <code>stripslashes()</code></p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="sources" class="py-4">
+                <header>
+                    <h2>Bibliografía</h2>
+                </header>
+                <div class="container-fluid">
+                    <ul class="list-unstyled">
+                        <li>[1] https://www.w3schools.com/cssref/pr_class_position.asp</li>
+                        <li>[2] https://www.w3schools.com/cssref/pr_class_visibility.asp</li>
+                        <li>[3] https://www.w3schools.com/cssref/pr_pos_z-index.asp</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+        <div class="col-lg-3">
+            <div class="sidebar sticky">
+                <nav id="data-scrollspy">
+                    <div id="lineDrawing">
+                        <svg viewBox="0 0 301 301" class="mb-4">
+                            <g fill="none" fill-rule="evenodd" stroke="#343a40" stroke-width="1" class="lines">
+                                <path class="cls-1" d="M294.32,0H5.68A5.7,5.7,0,0,0,0,5.68V294.32A5.7,5.7,0,0,0,5.68,300H294.32a5.7,5.7,0,0,0,5.68-5.68V5.68A5.7,5.7,0,0,0,294.32,0ZM107.75,194.74q0,24.11-8.33,37.16t-28,13q-9.94,0-23.36-3.73V216.61a30.76,30.76,0,0,0,9.69,1.74q8.95,0,11.31-6.71t2.36-19.88V58l36.29-3Zm133.34-46.85a50,50,0,0,1-26.59,16.4q-15.79,3.86-36.41,3.85V240l-36.54,3V55.05h23.36q28.08,0,44.74,2.36A52.69,52.69,0,0,1,239.1,72q12.8,12.18,12.8,39Q251.9,135.34,241.09,147.89Z"/>
+                                <path class="cls-1" d="M207.91,89.6q-7.71-5.46-24.36-5.47h-5.22v54.43h6.21q14.41,0,22.74-6t8.33-21.87Q215.62,95.07,207.91,89.6Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <img id="logo" src="../images/logo-big.png" draggable="true" ondragstart="drag(event)" class="img img-fluid logo_big" alt="">
+                    <div id="sidenav" class="list-group d-none d-lg-block">
+                        <a class="list-group-item list-group-item-action" href="#intro"><i class="fas fa-angle-right"></i> Introducción</a>
+                        <a class="list-group-item list-group-item-action" href="#response"><i class="fas fa-angle-right"></i> Respuesta de PHP</a>
+                        <a class="list-group-item list-group-item-action" href="#questions"><i class="fas fa-angle-right"></i> Preguntas</a>
+                        <a class="list-group-item list-group-item-action" href="#sources"><i class="fas fa-angle-right"></i> Bibliografía</a>
+                    </div>
+                    <div class="wrapper text-center">
+                        <div class="btn-group py-3 text-center" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-link social"><i class="fab fa-2x fa-facebook-square"></i></button>
+                            <button type="button" class="btn btn-link social"><i class="fab fa-2x fa-instagram"></i></button>
+                            <button type="button" class="btn btn-link social"><i class="fab fa-2x fa-twitter-square"></i></button>
+                            <button type="button" class="btn btn-link social"><i class="fab fa-2x fa-slack"></i></button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
