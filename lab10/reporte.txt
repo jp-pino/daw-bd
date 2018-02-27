@@ -1,0 +1,23 @@
+## Preguntas
+### ¿Qué muestra la instrucción `sp_help materiales`?
+
+La instrucción muestra 5 tablas que contienen información sobre la tabla, sus columnas, sus llaves y otros atributos.
+
+### Ejecuta las instrucciones que contiene el archivo crear.sql. ¿Qué efecto tuvo esta acción?
+
+Creó de manera inmediata todas las tablas requeridas. 
+
+### ¿Qué utilidad tiene esta manera de ejecutar los comandos de SQL?
+Se pueden ejecutar muchos comandos de manera casi instantánea. 
+
+### Abre una sesión de FTP y sube los siguientes archivos a tu directorio inicial. ¿Qué relación tienen con las tablas de la base de datos?
+
+Contienen valores que siguen las estructuras de las tablas separados por comas.
+
+### ¿Qué relación tiene el contenido de este archivo (materiales.sql) con el formato en que se encuentran los datos en el archivo materiales.csv?
+
+Los datos en /materiales.sql/ corresponden con los delimitadores utilizados en /materiales.csv/. Estos sirven para interpretar el texto del archivo de manera adecuada y asignar los valores correctos a cada columna.
+
+### Ejecuta los comandos definidos en el archivo materiales.sql ¿Qué sucedió?
+
+Los datos del archivo /materiales..csv/ se cargaron a la base de datos.
