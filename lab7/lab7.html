@@ -9,17 +9,17 @@
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
 
-		<title>LAB 4: JS</title>
+		<title>LAB 7: Bootstrap 4.0</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
 		<link href="css/custom.min.css" rel="stylesheet">
-		
+
 		<!-- Custom Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
-		
+
 		<!-- Font Awesome -->
 		<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
@@ -56,8 +56,12 @@
 								<a class="dropdown-item" href="#">Lab 2</a>
 								<a class="dropdown-item" href="lab3.html">Lab 3</a>
 								<a class="dropdown-item" href="lab4.html">Lab 4</a>
+								<a class="dropdown-item" href="lab5.html">Lab 5/6</a>
+								<a class="dropdown-item active" href="lab7.html">Lab 7</a>
+								<a class="dropdown-item" href="lab9.php">Lab 9</a>
+		                        <a id="lab11" class="dropdown-item" href="lab11/">Lab 11</a>
 								<div class="dropdown-divider"></div>
-          						<a class="dropdown-item active" href="q_1.html">Cuestionario 1</a>
+          						<a class="dropdown-item" href="q_1.html">Cuestionario 1</a>
 							</div>
 						</li>
 						<li class="nav-item">
@@ -70,93 +74,171 @@
 				</div>
 			</nav>
 		</div>
-		
+
 		<section id="content" class="container">
 			<header>
-				<h2 class="sr-only">Cuestionario 1</h2>
+				<h2 class="sr-only">Laboratorio 7</h2>
 			</header>
 			<div class="row">
 				<div class="col-lg-9">
-					
+
 					<!-- Main component for a primary marketing message or call to action -->
 					<article id="intro" class="jumbotron bg-dark text-white shadow">
 						<div class="row">
-							<div class="col-lg-9">
+							<div class="col-lg-6">
 								<header>
-									<h2>Cuestionario 1: BD vs DBMS</h2>
+									<h2>Lab 7: Bootstrap 4.0.0</h2>
 								</header>
-								<p class="py-5">En esta sección se responderán las preguntas del cuestionario de bases de datos.</p>
+								<p class="py-5">En este lab se demostrará el uso de algunos de los componentes de <strong>Bootstrap</strong> y contestarán nuevas preguntas.</p>
 							</div>
 							<div class="col-sm">
 								<div class="container-fluid">
-								<img src="images/db.png" class="img-fluid img" alt="Responsive Image of JS"></div>
+								<img src="images/bootstrap-stack.png" class="img-fluid img" alt="Responsive Image of JS"></div>
 							</div>
 						</div>
+
 					</article>
-					
-					
+
+
+
+					<article id="tests" class="py-4">
+						<header>
+							<h2>Componentes</h2>
+							<h5 class="px-3"> de Bootstrap</h5>
+						</header>
+
+						<div class="card-deck py-4">
+							<div class="card">
+								<div class="card-header">
+									Alerts
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<h5 class="card-title">Código</h5>
+										<pre class="card-text"><code>
+&lt;div class="alert alert-danger alert-dismissible fade show" role="alert"&gt;
+  &lt;strong&gt;Error!&lt;/strong&gt; Completa todos los campos en el formulario.
+  &lt;button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"&gt;
+    &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+									</li>
+									<li class="list-group-item">
+										<h5 class="card-title">Resultado</h5>
+										<div class="alert alert-danger alert-dismissible fade show" role="alert">
+											<strong>Error!</strong> Completa todos los campos en el formulario.
+											<button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+
+							<div class="card">
+								<div class="card-header">
+									Badges
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<h5 class="card-title">Código</h5>
+											<pre class="card-text"><code>
+&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-light"&gt;Light&lt;/span&gt;
+&lt;span class="badge badge-dark"&gt;Dark&lt;/span&gt;</code></pre>
+									</li>
+									<li class="list-group-item">
+										<h5 class="card-title">Resultado</h5>
+										<span class="badge badge-primary">Primary</span>
+										<span class="badge badge-secondary">Secondary</span>
+										<span class="badge badge-success">Success</span>
+										<span class="badge badge-danger">Danger</span>
+										<span class="badge badge-warning">Warning</span>
+										<span class="badge badge-info">Info</span>
+										<span class="badge badge-light">Light</span>
+										<span class="badge badge-dark">Dark</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="card-deck">
+							<div class="card">
+								<div class="card-header">
+									Badges
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<h5 class="card-title">Código</h5>
+											<pre class="card-text"><code>
+&lt;div class="btn-group" role="group" aria-label="Basic example"&gt;
+  &lt;button type="button" class="btn btn-secondary"&gt;Izquierda&lt;/button&gt;
+  &lt;button type="button" class="btn btn-secondary"&gt;Centro&lt;/button&gt;
+  &lt;button type="button" class="btn btn-secondary"&gt;Derecha&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+									</li>
+									<li class="list-group-item">
+										<h5 class="card-title">Resultado</h5>
+										<div class="btn-group" role="group" aria-label="Basic example">
+											<button type="button" class="btn btn-secondary">Izquierda</button>
+											<button type="button" class="btn btn-secondary">Centro</button>
+											<button type="button" class="btn btn-secondary">Derecha</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="card">
+								<div class="card-header">
+									Tooltip + Modal
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<h5 class="card-title">Código</h5>
+											<pre class="card-text"><code>
+&lt;span data-toggle="modal" data-target="#contact"&gt;
+  &lt;button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Haz click para abrir el modal"&gt;Modal&lt;/button&gt;
+&lt;/span&gt;</code></pre>
+									</li>
+									<li class="list-group-item">
+										<h5 class="card-title">Resultado</h5>
+										<span data-toggle="modal" data-target="#contact"><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Haz click para abrir el modal">Modal</button></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+
+
+					</article>
+
 					<article id="questions" class="py-4">
 						<header>
 							<h2>Preguntas</h2>
 							<h5 class="px-3">...y respuestas</h5>
 						</header>
-						
-						<div class="card mt-4 shadow">
-							<div class="card-body">
-								<h4 class="card-title">¿Qué es entonces una base de datos - DB?</h4>
-								<p class="card-text">Una base de datos es una colección de información relacionada<sub>[5]</sub> organizada para proporcionar una acceso efeciente a la misma<sub>[1]</sub>. De esta manera una base de datos no es más que la información almacenada de manera organizada que se trata como unidad para acceder a información relacionada<sub>[2]</sub>. Al utilizar una base de datos electrónica, los usuarios buscan automatizar el acceso a la información.</p>
-							</div>
-						</div>
-						<div class="card mt-4 shadow">
-							<div class="card-body">
-								<h4 class="card-title">¿En qué casos es conveniente usar bases de datos?<sub>[3]</sub></h4>
-								<ul class="card-text fa-ul">
-									<li><i class="fa-li fas fa-angle-right"></i> Cuando la información almacenada es muy grande.</li>
-									<li><i class="fa-li fas fa-angle-right"></i> Más de una persona accesará la información simultaneamente.</li>
-									<li><i class="fa-li fas fa-angle-right"></i> Cuando la información va a ser utilizada en otras aplicaciones.</li>
-									<li><i class="fa-li fas fa-angle-right"></i> Cuando la seguridad de la información es importante.</li>
-									<li><i class="fa-li fas fa-angle-right"></i> Cuando se quieren definir permisos de acceso a la información.</li>
-								</ul>
-							</div>
-						</div>
-						<div class="card mt-4 shadow">
-							<div class="card-body">
-								<h4 class="card-title">¿Qué es un sistema de gestión de base de datos - DBMS?</h4>
-								<p class="card-text">Un sistema de gestión de base de datos (por sus siglas en inglés <strong>D</strong>ata<strong>B</strong>ase <strong>M</strong>anagement <strong>S</strong>ystem) es un sistema computarizado de manjejo de datos que les da a los usuarios la facilidad de manipular la información en la base de datos o su estructura<sub>[4]</sub>.</p>
-							</div>
-						</div>
-						<div class="card text-white bg-dark shadow mt-4">
-							<ul class="list-group list-group-flush bg-dark">
-								<li class="list-group-item text-dark"><h4>Enlista y explica las funciones/responsabilidades que tienen los DBMS.</h4><p class="card-text">Los DBMS resuelven las siguientes problemáticas<sub>6</sub>.</p></li>
-								<li class="list-group-item bg-dark"><h5>Redundancia e inconsistencia</h5><p class="card-text">El DBMS se asegura de que la información almacenada no esté duplicada y que todos los usuarios puedan acceder a la información mas actualizada.</p></li>
-								<li class="list-group-item bg-dark"><h5>Dificultad en el acceso</h5><p class="card-text">Debido a las relaciones implementadas en el sistema es muy facil para el usuario acceder a información específica organizada de la manera que le sea mas conveniente.</p></li>
-								<li class="list-group-item bg-dark"><h5>Aislamiento</h5><p class="card-text">Al implementarse bases de datos relacionales, los archivos registrados en el sistema pueden ser accesados por el mismo usuario de manera simultánea sin preocuparse de buscar los archivos.</p></li>
-								<li class="list-group-item bg-dark"><h5>Problemas de integridad</h5><p class="card-text">Al implementar restricciones de consistencia, se asegura que la información almacenada y por ser registrada siga la estructura de las tablas definidas en el sistema.</p></li>
-								<li class="list-group-item bg-dark"><h5>Problemas de atomicidad</h5><p class="card-text">El DBMS se asegura de que la información se restaure después de un fallo de sistema, para asegurar su seguridad y consistencia.</p></li>
-								<li class="list-group-item bg-dark"><h5>Problemas de seguridad</h5><p class="card-text">El DBMS permite la creación de usuarios y roles para restringir el acceso a la información o su modificación.</p></li>
-								<li class="list-group-item bg-dark"><h5>Problemas de acceso concurrente</h5><p class="card-text">El DBMS maneja las modificaciones concurrentes supervisando los cambios realizados. De esta manera intenta asegurar al usuario que la información que recibe está acutalizada.</p></li>
-							</ul>
-						</div>
-						<div class="card mt-4 shadow">
-							<div class="card-body">
-								<h4 class="card-title">Ejemplifica y justifica en que proyecto de los que has realizado hubiera sido conveniente utilizar una base de datos.</h4>
-								<p class="card-text">Para el "Laboratorio de Microcontroladores" hice un control de acceso basado en un módulo lector de huellas dactilares. Las entradas y salidas eran registradas en un archivo de texto. Hubiera sido conveniente tener una base de datos de usuarios registrados para estos manejar un mayor número de usuarios.</p>
-							</div>
-						</div>
 
+						<div class="card mt-4 shadow">
+							<div class="card-body">
+								<h4 class="card-title">Describe Material Design<sub><small>[1]</small></sub></h4>
+								<p class="card-text">Material Design es el "lenguaje visual" de Google creado para ser atractivo y estéticamente agradable, y para unificar las interfaces de sus distintas plataformas. Está inspirado por el mundo real donde las superficies y bordes son parte esencial de nuestra experiencia sensorial. Así, Material Design trata de simular estas formas para crear una experiencia natural para sus usuarios. Además involucra profundidad para producir sensación de movimiento y describir como interactúan los objetos entre sí. De esta manera continúa la descripción de Material Design como más que una guía de diseño, pareciendo una especie de filosofía para la interacción de la tecnología con el buen diseño y el usuario.</p>
+							</div>
+						</div>
 					</article>
-					
+
 					<article id="sources" class="py-4">
 						<header>
 							<h2>Bibliografía</h2>
 						</header>
 						<ul class="list-unstyled">
-							<li>[1] http://www.usg.edu/galileo/skills/unit04/primer04_01.phtml</li>
-							<li>[2] https://docs.oracle.com/cloud/latest/db112/CNCPT/intro.htm#CNCPT001</li>
-							<li>[3] http://www.bbc.co.uk/schools/gcsebitesize/ict/databases/2databasesrev4.shtml</li>
-							<li>[4] https://www.ibm.com/support/knowledgecenter/zosbasics/com.ibm.zos.zmiddbmg/zmiddle_46.htm</li>
-							<li>[5] Nirupma Pathak. Database Management System, 1-4</li>
-							<li>[6] Korth Henry, Silverschatz. Fundamentos de bases de datos, Capítulo 1.</li>
+							<li>[1] https://material.io/guidelines/</li>
 						</ul>
 					</article>
 
@@ -165,17 +247,18 @@
 				<div class="col-lg-3">
 					<div class="sidebar sticky">
 						<nav id="data-scrollspy">
-							<div id="lineDrawing"> 
+							<div id="lineDrawing">
 								<svg viewBox="0 0 301 301" class="mb-4">
-									<g fill="none" fill-rule="evenodd" stroke="#343a40" stroke-width="2" class="lines">
+									<g fill="none" fill-rule="evenodd" stroke="#343a40" stroke-width="1" class="lines">
 										<path class="cls-1" d="M294.32,0H5.68A5.7,5.7,0,0,0,0,5.68V294.32A5.7,5.7,0,0,0,5.68,300H294.32a5.7,5.7,0,0,0,5.68-5.68V5.68A5.7,5.7,0,0,0,294.32,0ZM107.75,194.74q0,24.11-8.33,37.16t-28,13q-9.94,0-23.36-3.73V216.61a30.76,30.76,0,0,0,9.69,1.74q8.95,0,11.31-6.71t2.36-19.88V58l36.29-3Zm133.34-46.85a50,50,0,0,1-26.59,16.4q-15.79,3.86-36.41,3.85V240l-36.54,3V55.05h23.36q28.08,0,44.74,2.36A52.69,52.69,0,0,1,239.1,72q12.8,12.18,12.8,39Q251.9,135.34,241.09,147.89Z"/>
 										<path class="cls-1" d="M207.91,89.6q-7.71-5.46-24.36-5.47h-5.22v54.43h6.21q14.41,0,22.74-6t8.33-21.87Q215.62,95.07,207.91,89.6Z"/>
 									</g>
-								</svg> 
+								</svg>
 							</div>
-							<img id="logo_big" src="images/logo-big.png" class="img img-fluid" alt="">
+							<img src="images/logo-big.png" class="img img-fluid logo_big" alt="">
 							<div id="sidenav" class="list-group d-none d-lg-block">
 								<a class="list-group-item list-group-item-action" href="#intro"><i class="fas fa-angle-right"></i> Introducción</a>
+								<a class="list-group-item list-group-item-action" href="#tests"><i class="fas fa-angle-right"></i> Pruebas de JS</a>
 								<a class="list-group-item list-group-item-action" href="#questions"><i class="fas fa-angle-right"></i> Preguntas</a>
 								<a class="list-group-item list-group-item-action" href="#sources"><i class="fas fa-angle-right"></i> Bibliografía</a>
 							</div>
@@ -192,7 +275,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- Modal -->
 		<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -219,7 +302,7 @@
 												<input id="email" name="email" type="email" placeholder="E-mail" class="form-control">
 											</div>
 										</div>
-										
+
 										<!-- Select input-->
 										<div class="form-group">
 											<label class="col control-label" for="options">¿Por qué te contactas?</label>
@@ -254,7 +337,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<footer class="bg-dark text-white mt-4">
 			<div class="container-fluid py-4">
 				<div class="row">
@@ -277,8 +360,9 @@
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/smooth-scroll.js"></script>
+		<script src="js/js_test.js"></script>
 		<script src="js/anime.min.js"></script>
 		<script src="js/anime_test.js"></script>
 	</body>
-	
+
 </html>
