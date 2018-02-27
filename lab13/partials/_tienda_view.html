@@ -1,0 +1,18 @@
+<div class="card card-login mx-auto mt-5">
+    <div class="card-header">Bienvenido <?=$user?></div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary" href="add.php"><i class="fas fa-plus"></i> Add Image</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src='<?=$_SESSION["ruta_archivo"]?>'><?=$_SESSION["producto"]?>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="logout.php" class="text-danger">Logout</a>
+    </div>
+</div>
