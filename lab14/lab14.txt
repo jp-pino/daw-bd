@@ -1,0 +1,13 @@
+### ¿Qué es ODBC y para qué es útil?
+
+Open Data Base Conectivity son parte de las bases de datos que definen un estándar común para interactuar con la aplicación que recupera la información de la base de datos. Esta cayendo en desuso porque no todos los servicios de un DBMS en particular están disponibles a través de ODBC.
+
+https://www.uv.es/jac/guia/gestion/gestion3.htm
+
+### ¿Qué es SQL Injection?
+Es un ataque en el que se insertan comandos de SQL no deseados desde el lado del cliente.
+
+### ¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?
+Limitar los permisos de los usuarios y usar prepared statements en vez de consultas en texto plano concatenado. De esta manera el cliente no puede cambiar la estructura de la consulta.
+
+https://www.w3schools.com/sql/sql_injection.asp
