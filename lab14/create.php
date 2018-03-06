@@ -52,8 +52,8 @@
                 $_SESSION["error_archivo"] = "Si se esta procesando el archivo";
                 header("location:add.php");
             }
-            $_SESSION["archivo"] = $target_file;
-            $_SESSION["producto"] = $_POST["producto"];
+
+            crearProducto($_POST["producto"], $_POST["descripcion"], basename($_FILES["imagen"]["name"]));
             header("location:login.php");
         } else {
             $_SESSION["error_archivo"] = "No se esta procesando el archivo";

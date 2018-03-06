@@ -1,12 +1,10 @@
 <?php
     session_start();
-
     if(isset($_SESSION["usuario"]) ) {
-        $user = $_SESSION["usuario"];
-        include("partials/_header.html");
-        include("partials/_add_form.html");
-        include("partials/_footer.html");
+        header("location: login.php");    
     } else {
-        header("location:index.php");
+        include("partials/_header.html");
+        include("partials/_login_form.html");
+        include("partials/_footer.html");
     }
 ?>

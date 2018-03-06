@@ -6,9 +6,13 @@
                 <a class="btn btn-primary" href="add.php"><i class="fas fa-plus"></i> Add Image</a>
             </div>
         </div>
-        <div class="row">
+        <div class="row py-2">
             <div class="col">
-                <img src='<?=$_SESSION["ruta_archivo"]?>'><?=$_SESSION["producto"]?>
+                <?php if (isset($_SESSION["error_archivo"]) == ""): ?>
+                    <div class="container-fluid">
+                        <img class="img img-fluid" src="<?=$_SESSION["archivo"]?>"><?=$_SESSION["producto"]?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
