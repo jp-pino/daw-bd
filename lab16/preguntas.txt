@@ -1,0 +1,14 @@
+¿Por qué es una buena práctica separar el modelo del controlador?
+Es bueno por que sirve para separar la parte logica de la parte visual asi manteniendo orden en el codigo. De esta manera aumentamos la reusabilidad del codigo y realizar cambios es mas sencillo.
+
+
+
+¿Qué es SQL injection y cómo se puede prevenir?
+Consiste en la inserción de código SQL por medio de los datos de entrada desde la parte del cliente hacia la aplicación. Es decir, por medio de la inserción de este código el atacante puede modificar las consultar originales que debe realizar la aplicación y ejecutar otras totalmente distintas con la intención de acceder a la herramienta, obtener información de alguna de las tablas o borrar los datos almacenados, entre otras muchas cosas.
+
+a) Escapar los caracteres especiales utilizados en las consultas SQL
+b) Delimitar los valores de las consultas
+c) Verificar siempre los datos que introduce el usuario
+d) Asignar mínimos privilegios al usuario que conectará con la base de datos
+
+https://pressroom.hostalia.com/white-papers/ataques-inyeccion-sql
