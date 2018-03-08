@@ -62,6 +62,25 @@
         return false;
     }
 
+    function getProductoRow($id) {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT * FROM productos WHERE id ='.$id;
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+             // cycle to explode every line of the results
+
+            $fila = mysqli_fetch_array($results, MYSQLI_BOTH);
+            mysqli_free_result($results);
+            disconnect($db);
+            return $fila;
+        }
+        return false;
+    }
+
     function getProductos() {
         $db = connect();
         if ($db != NULL) {
@@ -82,6 +101,8 @@
                                     <img class="card-img" src="uploads/'.$fila["image"].'" alt="Card image">
                                     <div class="card-body">
                                         <div class="card-text">'.$fila["description"].'</div>
+                                        <a class="btn btn-primary" href="delete.php?q='.$fila["id"].'">Eliminar</a>
+                                        <a class="btn btn-primary" href="edit.php?q='.$fila["id"].'">Editar</a>
                                     </div>
                                     <div class="card-footer">Publicado el '.$fila["created_at"].'</div>
                                 </div>';
@@ -93,6 +114,58 @@
             return true;
         }
         return true;
+    }
+
+    function deleteProducto($id) {
+        $db = connect();
+        if ($db != NULL) {
+
+            // insert command specification
+            $query='DELETE FROM Productos WHERE id=?';
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("i", $id)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+            if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+            }
+
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
+    }
+
+    function editProducto($id, $nombre, $description) {
+        $db = connect();
+        if ($db != NULL) {
+
+            // insert command specification
+            $query='UPDATE Productos SET nombre=?, description=? WHERE id=?';
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ssi", $nombre, $description, $id)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+            if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+            }
+
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
     }
 
 
