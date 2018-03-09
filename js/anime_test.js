@@ -14,7 +14,7 @@ basicTimeline
 		easing: 'easeInOutQuart'
 	})
 	.add({
-		targets: '#lineDrawing .lines path',
+		targets: ['#lineDrawing .lines path', '#lineDrawing .lines circle'],
 		strokeDashoffset: [anime.setDashoffset, 0],
 		easing: 'easeInOutSine',
 		duration: 900,
@@ -27,7 +27,7 @@ basicTimeline
 		elasticity: 10
 	})
 	.add({
-		targets: '#lineDrawing .lines path',
+		targets: ['#lineDrawing .lines path', '#lineDrawing .lines circle'],
 		easing: 'easeInOutSine',
 		duration: 400,
 		opacity: 0,

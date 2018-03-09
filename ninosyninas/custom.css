@@ -1,5 +1,5 @@
 body {
-	padding-top: 20px;
+	padding-top: 12em;
 }
 
 .navbar {
@@ -9,7 +9,7 @@ body {
 .sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 30px;
+    top: 14em;
 }
 
 .sticky:before,
@@ -30,6 +30,25 @@ h1 {
 	padding-right: 30px;
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+	h1 {
+		font-size: 2.0rem;
+		margin-top: 10px;
+	}
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/* large desktops and up ----------- */
+@media screen and (min-width: 1200px) {
+}
+
 
 
 
@@ -188,9 +207,20 @@ body, #sidenav, .social {
 	width: 200px;
 }
 
+#fade {
+	z-index: 1000;
+	margin-top: 11em;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+}
 
+#nav_header nav {
+	z-index: 2000;
+}
 
-
+article div.anchor {
+	position: relative;
+	top: -230px;
+}
 
 
 
@@ -214,8 +244,9 @@ body, #sidenav, .social {
 .btn-hot:active, .btn-hot.active {
 	color: #fff;
 	background-color: #4cbdc6;
+	padding-top: 7px;
+	padding-bottom: 8px;
 	border-top:2px solid #3cb6bf;
-	margin-top: 2px;
 }
 
 .btn-hot-alt {
@@ -235,9 +266,10 @@ body, #sidenav, .social {
 
 .btn-hot-alt:active, .btn-hot-alt.active {
 	color: #fff;
-	background-color: #d55290;
+	background-color: #7a3053;
+	padding-top: 7px;
+	padding-bottom: 8px;
 	border-top:2px solid #a34571;
-	margin-top: 2px;
 }
 
 .list-group-item.list-group-item-action.active {
