@@ -1,0 +1,183 @@
+#### La suma de las cantidades e importe total de todas las entregas realizadas durante el 97
+
+SET DATEFORMAT dmy;
+
+SELECT SUM(Cantidad) AS 'Cantidades', SUM(Costo) AS 'Importe Total'
+FROM Entregan E, Materiales M
+WHERE E.Clave = M.Clave
+AND Fecha BETWEEN '1/1/97' AND '31/12/97'
+
+## Resultado
+Cantidades	Importe Total
+546.00		80.00
+
+
+#### Para cada proveedor, obtener la razón social del proveedor, número de entregas e importe total de las entregas realizadas. 
+
+SELECT P.RazonSocial, COUNT(*) AS 'Numero de Entregas', SUM(Costo) AS 'Importe Total'
+FROM Entregan E, Materiales M, Proveedores P
+WHERE E.Clave = M.Clave
+  AND E.RFC = P.RFC
+GROUP BY P.RazonSocial
+
+## Resultado
+RazonSocial	Numero Entregas		Importe Total
+Alvin		15			1977.00
+Cecoferre	18			2610.00
+Comex		15			2580.00
+...
+
+
+#### Por cada material obtener la clave y descripción del material, la cantidad total entregada, la mínima cantidad entregada, la máxima cantidad entregada, el importe total de las entregas de aquellos materiales en los que la cantidad promedio entregada sea mayor a 400. 
+
+
+SELECT E.Clave, Descripcion, SUM(Cantidad) AS 'Cantidad Total', MIN(Cantidad) AS 'Cantidad Minima', MAX(Cantidad) AS 'Cantidad Maxima', SUM(Costo) AS 'Importe Total'
+FROM Entregan E, Materiales M
+WHERE E.Clave = M.Clave
+GROUP BY E.Clave, Descripcion
+HAVING AVG(Cantidad) > 400
+
+## Resultado
+
+Clave	Descripcion	Cantidad Total	Cantidad Minima	Cantidad Maxima	Importe Total
+1010	Varilla 4/32	1718.00		523.00		667.00		345.00
+1040	Varilla 3/18	1349.00		263.00		546.00		480.00
+1050	Varilla 4/34	1216.00		90.00		623.00		525.00
+...
+
+
+#### Para cada proveedor, indicar su razón social y mostrar la cantidad promedio de cada material entregado, detallando la clave y descripción del material, excluyendo aquellos proveedores para los que la cantidad promedio sea menor a 500. 
+
+SELECT RazonSocial, AVG(Cantidad) AS 'Promedio', E.Clave, Descripcion
+FROM Entregan E, Materiales M, Proveedores P
+WHERE E.Clave = M.Clave
+  AND E.RFC = P.RFC
+GROUP BY RazonSocial, E.Clave, Descripcion
+HAVING AVG(Cantidad) > 500
+
+## Resultado
+RazonSocial	Promedio	Clave	Descripcion
+Oviedo		572.666666	1010	Varilla 4/32
+La Ferre	562.666666	1100	Block
+Oviedo		509.666666	1410	Pintura B1021
+
+
+#### Mostrar en una solo consulta los mismos datos que en la consulta anterior pero para dos grupos de proveedores: aquellos para los que la cantidad promedio entregada es menor a 370 y aquellos para los que la cantidad promedio entregada sea mayor a 450.
+
+SELECT RazonSocial, AVG(Cantidad) AS 'Promedio', E.Clave, Descripcion
+FROM Entregan E, Materiales M, Proveedores P
+WHERE E.Clave = M.Clave
+  AND E.RFC = P.RFC
+GROUP BY RazonSocial, E.Clave, Descripcion
+HAVING AVG(Cantidad) < 370 OR AVG(Cantidad) > 450
+
+## Resultado
+
+RazonSocial	Promedio	Clave	Descripcion
+La fragua	142.000000	1000	Varilla 3/16
+Oviedo		572.666666	1010	Varilla 4/32
+La Ferre	356.000000	1020	Varilla 3/17
+...
+
+
+#### Clave y descripción de los materiales que nunca han sido entregados. 
+
+SELECT Clave, Descripcion
+FROM Materiales
+WHERE Clave NOT IN (SELECT Clave FROM Entregan)
+
+## Resultado
+
+Clave	Descripcion
+1440	Alambre 3/16
+1450	Alambre 4/16
+1460	Alambre 5/16
+
+
+#### Razón social de los proveedores que han realizado entregas tanto al proyecto 'Vamos México' como al proyecto 'Querétaro Limpio'. 
+
+SELECT DISTINCT Pr.RazonSocial
+FROM Proveedores Pr, Proyectos P, Entregan E
+WHERE Pr.RFC = E.RFC
+  AND P.Numero = E.Numero
+  AND Denominacion = 'Vamos Mexico'
+  AND Pr.RFC IN (SELECT RFC
+                 FROM Proyectos P, Entregan E
+                 WHERE P.Numero = E.Numero
+                   AND Denominacion = 'Queretaro limpio')
+
+## Resultado
+
+RazonSocial
+La fragua
+
+#### Descripción de los materiales que nunca han sido entregados al proyecto 'CIT Yucatán'. 
+
+SELECT DISTINCT Descripcion
+FROM Materiales M, Entregan E, Proyectos P
+WHERE M.Clave = E.Clave
+  AND P.Numero = E.Numero
+  AND Descripcion NOT IN (SELECT DISTINCT Descripcion
+                          FROM Materiales M, Entregan E, Proyectos P
+                          WHERE M.Clave = E.Clave
+                            AND P.Numero = E.Numero
+                            AND P.Denominacion = 'CIT Yucatan')
+
+
+## Resultado
+
+Descripcion
+Arena
+Block
+Cantera amarilla
+...
+
+
+#### Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor al promedio de la cantidad entregada por el proveedor con el RFC 'VAGO780901'. 
+
+
+SELECT DISTINCT RazonSocial, AVG(Cantidad) AS 'Promedio Cantidad'
+FROM Materiales M, Entregan E, Proveedores P
+WHERE M.Clave = E.Clave
+  AND P.RFC = E.RFC
+GROUP BY RazonSocial
+HAVING AVG(Cantidad) > (SELECT AVG(Cantidad)
+                        FROM Entregan
+                        WHERE RFC = 'VAGO780901'
+                        GROUP BY RFC)
+
+Como no hay el proveedor con ese RFC procedo a crearlo y sus valores de prueba:
+INSERT INTO Proveedores VALUES ('VAGO780901', 'COMPANIA DE PRUEBA');
+INSERT INTO Entregan VALUES (1400, 'VAGO780901', 5000, '10/10/2017', 10);
+INSERT INTO Entregan VALUES (1410, 'VAGO780901', 5005, '10/10/2017', 20);
+
+## Resultado
+
+RazonSocial	Promedio Cantidad
+Alvin		359.333333
+Cecoferre	335.500000
+Comex		326.333333
+...
+
+
+
+#### RFC, razón social de los proveedores que participaron en el proyecto 'Infonavit Durango' y cuyas cantidades totales entregadas en el 2000 fueron mayores a las cantidades totales entregadas en el 2001.
+
+SELECT P.RFC, RazonSocial
+FROM Entregan E, Proveedores P, Proyectos Pr
+WHERE P.RFC = E.RFC
+  AND Pr.Numero = E.Numero
+  AND Pr.Denominacion = 'Infonavit Durango'
+  AND Fecha BETWEEN '1/1/2000' AND '31/12/2000'
+GROUP BY P.RFC, RazonSocial
+HAVING SUM(Cantidad) > (
+  SELECT SUM(Cantidad)
+  FROM Entregan E1, Proyectos PR1
+  WHERE E1.Fecha BETWEEN '1/1/2001' AND '31/12/2001'
+  AND PR1.Denominacion = 'Infonavit Durango'
+)
+
+## Resultado
+
+Vacio porque no hay un proveedor que haya entregado en el 2000 a Infonavit Durango una cantidad mayor que el total de materiales entregado en el 2001.
+
