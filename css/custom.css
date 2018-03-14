@@ -240,11 +240,6 @@ body, #sidenav, .social {
 	margin-top: 2px;
 }
 
-.list-group-item.list-group-item-action.active {
-	background-color: #00b2bf !important;
-	border-color: #00b2bf !important;
-}
-
 .bg-cyan {
 	background-color: #00b2bf !important;
 }
