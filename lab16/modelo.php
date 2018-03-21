@@ -1,4 +1,4 @@
-<?php
+x<?php
     function connect() {
         $mysql = mysqli_connect("localhost:8089","root","","Tienda");
         $mysql->set_charset("utf8");
