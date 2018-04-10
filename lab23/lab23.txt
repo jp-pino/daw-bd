@@ -1,0 +1,96 @@
+##¿Que pasa cuando deseas realizar esta consulta? 
+
+Puedo visualizar los contenidos de la tabla desde la segunda sesión.
+
+
+##¿Qué pasa cuando deseas realizar esta consulta? 
+
+Se inicia la transacción y espera a que se termine de ejecutar. Al hacer el selecto en la otra sesión se queda esperando la respuesta sin mostrar nada. Está "pensando". En la sesión de la transacción si se visualizan todos los elementos.
+
+##Explica por qué ocurre dicho evento. 
+
+001	Manuel Rios Maldonado	9000.00
+Si regresa el resultado correcto. Esta consulta no involucra las tuplas que no se han confirmado en el gestor.
+
+##¿Qué ocurrió y por qué? 
+
+Los cambios realizados desde que se empezó la transacción fueron descartados por el rollback.
+
+##Posteriormente revisa si las tablas de clientes_banca y movimientos sufrieron algún cambio, es decir, si dio de alta el registro que se describe en la transacción y su actualización. 
+
+Si se realizaron los cambios
+
+
+
+##¿Para qué sirve el comando @@ERROR revisa la ayuda en línea? 
+
+Si el statement anterior se ejecuta sin errores regresa 0. De lo contrario regresa el código del error.
+
+
+
+##¿Explica qué hace la transacción? 
+
+La transaction intenta ingresar varios valores a la tabla Clientes_Banca
+
+
+##¿Hubo alguna modificación en la tabla? Explica qué pasó y por qué. 
+
+No, porque hubo un error que obligo a hacer un ROLLBACK.
+
+
+
+#TRANSACCIONES + STORED PROCEDURES
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'REGISTRAR_RETIRO_CAJERO' AND type = 'P')
+    DROP PROCEDURE REGISTRAR_RETIRO_CAJERO
+GO
+
+CREATE PROCEDURE REGISTRAR_RETIRO_CAJERO
+    @unoccuenta VARCHAR(5),
+    @umonto NUMERIC(10,2)
+AS
+    BEGIN TRANSACTION REG
+    INSERT INTO Movimientos VALUES (@unoccuenta, 'A', DEFAULT , @umonto)
+    UPDATE Clientes_Banca SET Saldo = Saldo - @umonto WHERE NoCuenta = @unoccuenta
+
+    IF @@ERROR = 0
+    COMMIT TRANSACTION REG
+    ELSE
+    BEGIN
+    PRINT 'A transaction needs to be rolled back'
+    ROLLBACK TRANSACTION REG
+    END
+GO
+
+EXECUTE REGISTRAR_RETIRO_CAJERO '001', 200
+
+
+
+
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'REGISTRAR_DEPOSITO_VENTANILLA' AND type = 'P')
+    DROP PROCEDURE REGISTRAR_DEPOSITO_VENTANILLA
+GO
+
+CREATE PROCEDURE REGISTRAR_DEPOSITO_VENTANILLA
+    @unoccuenta VARCHAR(5),
+    @umonto NUMERIC(10,2)
+AS
+    BEGIN TRANSACTION REG
+    INSERT INTO Movimientos VALUES (@unoccuenta, 'B', DEFAULT, @umonto)
+    UPDATE Clientes_Banca SET Saldo = Saldo + @umonto WHERE NoCuenta = @unoccuenta
+
+    IF @@ERROR = 0
+    COMMIT TRANSACTION REG
+    ELSE
+    BEGIN
+    PRINT 'A transaction needs to be rolled back'
+    ROLLBACK TRANSACTION REG
+    END
+GO
+
+EXECUTE REGISTRAR_DEPOSITO_VENTANILLA '001', 200
+
+
