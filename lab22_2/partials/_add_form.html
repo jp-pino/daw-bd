@@ -1,0 +1,30 @@
+<div class="card card-login mx-auto mt-5">
+    <div class="card-header">Bienvenido <span id="username"></span></div>
+    <div class="card-body">
+        <form action="create.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="producto">Producto</label>
+                <input id="producto" type="text" name="producto" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input name="imagen" type="file" class="custom-file-input" id="inputGroupFile01" required>
+                    <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Registrar">
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <a href="#" onclick="gettienda()" class="text-danger">Regresar</a>
+    </div>
+</div>
