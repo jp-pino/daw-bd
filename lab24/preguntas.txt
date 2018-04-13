@@ -1,0 +1,11 @@
+## ¿A qué se refiere la descentralización de servicios web?
+Se refiere a un cambio en la industria en el que se busca reemplzar los servicios centralizados en un servidor a servicios distribuidos en varios dispositivos de computo. Un ejemplo de esto son las bases de datos en blockchain.
+
+## ¿Cómo puede implementarse un entorno con servicios web disponibles aún cuando falle un servidor?
+Separando los distintos servicios en distintos servidores. De esta manera al fallar un servidor solo fallara un servicio.
+
+
+Bibliografia
+
+https://es.wikipedia.org/wiki/Cadena_de_bloques
+https://medium.com/dws-io/dwsdb-b053424ae200
